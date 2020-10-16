@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("Ethics")
+define config.name = _("Ethics Project")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -61,7 +61,7 @@ define config.has_voice = True
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-# define config.main_menu_music = "main-menu-theme.ogg"
+define config.main_menu_music = "Audio/main_menu.mp3"
 
 
 ## Transitions #################################################################
