@@ -32,7 +32,7 @@ label start:        # Start
 label cave:         # Ancient Cave
 label china:        # Ancient China -> Confucius
 label cave2:        # Return to Cave
-label russia:       # Russia -> Kant
+# label russia:        # Russia -> Kant russia.rpy
 label cave3:        # Return to Cave
 label greece:       # Ancient Greece -> Aristotle
     scene white
