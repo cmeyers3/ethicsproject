@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 310: expected statement.
-    renpy.music.set_volume(0.6, delay=0, channel='music')
-                                                         ^
-
-File "game/script.rpy", line 643: expected statement.
-    renpy.music.set_volume(1, 0, channel='music')
-                                                 ^
+The label russia is defined twice, at
+  File "game/russia.rpyc", line 1 and
+  File "game/script.rpy", line 42.
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sun Nov 08 22:33:56 2020
+Mon Nov 09 12:53:16 2020

@@ -11,7 +11,6 @@ define C = Character("Confucius", color = "#c8ffc8")
 define K = Character("Kant",      color = "#c8ffc8")
 define A = Character("Aristotle", color = "#c8ffc8")
 define A_S = Character("Student", color = "#c8ffc8")
-define S = Character("Sphinx",    color = "#c8ffc8")
 define m = Character("Cthulhu III")
 default item_completion = True
 default question_number = 1
@@ -316,7 +315,7 @@ label final_boss_beginning:   # Sphinx/Final Boss Thing
 
     m "I am Cthulhu III. I guard the Philosopher' Stone, which can only be obtained by solving my riddles."
     m "Huh? You say that's ripped from Harry Potter? Well, it wasn't destroyed it was *ahem* given to me through some gratuitous plot holes."
-    m "Anyway, no one may attempt to achieve this prize unless they have obtained The Scrolls of Nicomachean Ethics, The Analects, and THING 3."
+    m "Anyway, no one may attempt to achieve this prize unless they have obtained The Scrolls of Nicomachean Ethics, The Analects, and Kant's Drafts."
     m "Do you have all three?"
 
     menu:
@@ -592,23 +591,99 @@ label question_10:
             $num_wrong += 1
             jump question_directory
 label question_11:
-    m "Well, we have reached our final school of philosophy. I must commend you for getting this far."
-    m "Although my hunger tells me not to..."
-    m "Anyways, according to the Deontology..."
+    m "Well, we have reached our final school of philosophy, Deontology. I must commend you for getting this far."
+    m "Although my hunger grumbles in protest..."
+    m "Anyways, what type of imperative does not depend on one's feelings and desires?"
     $question_number += 1
-    jump question_directory
+    menu:
+        "Globule Imperative":
+            play sound "audio/oof.mp3"
+            $num_wrong += 1
+            jump question_directory
+        "Categorical Imperative":
+            play sound "audio/correct.mp3"
+            jump question_directory
+        "Conditional Imperative":
+            play sound "audio/oof.mp3"
+            $num_wrong += 1
+            jump question_directory
+        "Shampoo Imperative":
+            play sound "audio/oof.mp3"
+            $num_wrong += 1
+            jump question_directory
 label question_12:
+    m "I should have come up with harder choices. Perhaps these next ones will stump you."
+    m "We must then act only on the maxims by which one can at the same time will that it should become a _________"
     $question_number += 1
-    jump question_directory
+    menu:
+        "Universal Law":
+            play sound "audio/correct.mp3"
+            m "I love universal laws. Sorry, I meant Universal Studios. Ba doom tsss."
+            jump question_directory
+        "National Law":
+            play sound "audio/oof.mp3"
+            $num_wrong += 1
+            jump question_directory
+        "State Law":
+            play sound "audio/oof.mp3"
+            $num_wrong += 1
+            jump question_directory
+        "Your Mom's Law":
+            play sound "audio/oof.mp3"
+            m "Yeah, in retrospect it's a really bad joke. Can't fault me for trying to be creative."
+            $num_wrong += 1
+            jump question_directory
 label question_13:
+    m "You have achieved something no mortal has ever done; reached the 13th question."
+    m "Although that is mainly due to the fact that I'm too hungry or impatient and break the rules..."
+    m "Speaking of willingly breaking the rules, does it matter if one strives to be moral?"
     $question_number += 1
-    jump question_directory
+    menu:
+        "Yes":
+            play sound "audio/oof.mp3"
+            $num_wrong += 1
+            jump question_directory
+        "No":
+            play sound "audio/correct.mp3"
+            jump question_directory
 label question_14:
+    m "Maybe you just guessed correctly. After all, it was a 50/50 chance."
+    m "Let's make this question a little harder to compensate: What should we derive our morals from?"
     $question_number += 1
-    jump question_directory
+    menu:
+        "Life of Pi by Yann Martel":
+            play sound "audio/oof.mp3"
+            $num_wrong += 1
+            jump question_directory
+        "I'm tired of games just end me.":
+            play sound "audio/oof.mp3"
+            $num_wrong += 1
+            jump question_directory
+        "Religion":
+            play sound "audio/oof.mp3"
+            $num_wrong += 1
+            jump question_directory
+        "Yourself":
+            play sound "audio/oof.mp3"
+            $num_wrong += 1
+            jump question_directory
+        "Reason":
+            play sound "audio/correct.mp3"
+            m "Yeah, in retrospect it's a really bad joke. Can't fault me for trying to be creative."
+            jump question_directory
 label question_15:
+    m "Now for the final question, and perhaps a chance to finally obtain your soul!"
+    m "Should we always base our decisions around utility?"
     $question_number += 1
-    jump question_directory
+    menu:
+        "Yes":
+            play sound "audio/oof.mp3"
+            $num_wrong += 1
+            m "Wrong! And on the very last question too! Your fate may have been sealed by this error."
+            jump question_directory
+        "No":
+            play sound "audio/correct.mp3"
+            jump question_directory
 label wrongdeath:
     m "Bwahaha you've gotten too many wrong. Time to die!"
     scene youdied
@@ -632,8 +707,13 @@ label finale:
     stop music fadeout 1.0
     play sound "audio/link_victory_theme.mp3"
     queue music "audio/rito_village_but_really_its_windwaker.mp3"
+    "The monster disappears into a green mist. His aura of corruption is lifted from the landscape, revealing a peaceful, alternative Windows XP background."
     show phil_stone
-    "The monster disappears into a green mist. The Philosopher's Stone sits where it once stood."
+    "The Philosopher's Stone suddenly pops up from the ground where the monster once stood."
+    "You pick it up and place it in your pocket for safekeeping, or perhaps to sell it at a pawn shop."
+    "Peace has been restored, and the world thanks you for ridding it of a great evil."
+    "Or so it thinks..."
+    scene white
     "Congratulations. You won the game!"
     "Would you like to play again?"
     menu:
@@ -644,12 +724,6 @@ label finale:
             jump start
         "No":
             jump endgame
-#label credits:
-#   If we have time (or the inclination) to make credits, I could def make them
-#    $ credits_speed = 25
-#    show credits_image at Move((0.5, 1.0), (0.5, -1.0), credits_speed,
-#                  xanchor=0.5, yanchor=0)
-#    with Pause(credits_speed+5)
 label endgame:
     return
 label bad_ending:
