@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+The label russia is defined twice, at
+  File "game/russia.rpyc", line 1 and
+  File "game/script.rpy", line 42.
+
+Ren'Py Version: Ren'Py 7.3.5.606
+Mon Nov 09 12:53:16 2020
