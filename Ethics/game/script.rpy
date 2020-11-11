@@ -867,6 +867,8 @@ label question_7:
             $num_wrong += 1
             jump question_directory
 label question_8:
+    m "Hmm. As we can see, worldly wealth is not a part of Junzi. Even though I will augment humanity as a gift, what if your kind takes advantage of it?"
+    m "I shudder to think of how humanity can so easily turn such a gift into a commodity; where a fellow man's augmentations are the focus of his worldly wealth."
     m "Let's dive into the three qualities. Which of the following best describes Humanness (Ren)?"
     $question_number += 1
     menu:
@@ -887,7 +889,10 @@ label question_8:
             $num_wrong += 1
             jump question_directory
 label question_9:
-    m "What about Filial Piety?"
+    m "Indeed, we should treat others with respect. Although I am a monster, I do not have the power to give the entirety of humanity augmentations at once."
+    m "A situation could easily realize where hostility emanates from those that have augmentations, and those that don't."
+    m "Such a divide could make following Ren, and therefore, ethical principles, much harder than anticipated."
+    m "What about the second quality: Filial Piety?"
     $question_number += 1
     menu:
         "One should be loyal to one's family, even if it breaks the law.":
@@ -904,12 +909,15 @@ label question_9:
             m "I like the way you think; after all, a soul tastes delicious, friend or foe. But, that is regrettably the incorrect answer."
             $num_wrong += 1
             jump question_directory
-        "You should show loyalty to everyone around you.":
+        "You should show loyalty to everyone around you, as humanity is one big family.":
             play sound "audio/correct.mp3"
             jump question_directory
 label question_10:
-    m "I see that you are indeed an attentive student of Confucious."
-    m "I myself don't care for his philosphies, although he does make some mean udon noodles when he invites me over for dinner."
+    m "What strikes me with Confucius's teachings is the fact that every human is part of a great family."
+    m "With augmentations, however, robotic decision-making and logical thought could prove to be roadblocks in finding the reason or empathy to respect others."
+    m "After all, a computer has no qualms when one takes advantage of others if it is a logical decision, which Filial Piety strictly prohibits."
+    m "It saddens me to see that adding augmentations may cause humanity to drift farther apart, rather than come closer together."
+    m "I see that you are indeed an attentive student of Confucious. We shall see if your insights point me towards a decision."
     m "To cover the last value, fill in the blank: ___________ is the basis for a good social order."
     $question_number += 1
     menu:
@@ -930,8 +938,12 @@ label question_10:
             $num_wrong += 1
             jump question_directory
 label question_11:
+    m "Ritual Decorum is about upholding the previous two values, but through ceremony and public expectations."
+    m "With this point, my plans may have a glimmer of hope. Public expectation will be followed, as robotics will find it most logial to uphold a social structure."
+    m "But you say that that is not free will? Indeed, that is true. One shouldn't be forced to take these actions by their foreign machinery; indeed, it should come from human wilingness to follow all three values."
+    m "Another philosopher foils my plan to ethically augment humans with technology."
     m "Well, we have reached our final school of philosophy, Deontology. I must commend you for getting this far."
-    m "Although my hunger grumbles in protest..."
+    m "Although my plans to augment humanity seem to have stalled...I still have hope that I will find ethical backing from Kant."
     m "Anyways, what type of imperative does not depend on one's feelings and desires?"
     $question_number += 1
     menu:
@@ -951,7 +963,8 @@ label question_11:
             $num_wrong += 1
             jump question_directory
 label question_12:
-    m "I should have come up with harder choices. Perhaps these next ones will stump you."
+    m "There are many categorical imperatives that one must follow regardless of the situation."
+    m "Perhaps my robotic prostheses for humanity could help with following these imperatives; just a little bit of hard-coding rules should do the trick."
     m "We must then act only on the maxims by which one can at the same time will that it should become a _________"
     $question_number += 1
     menu:
@@ -973,9 +986,8 @@ label question_12:
             $num_wrong += 1
             jump question_directory
 label question_13:
-    m "You have achieved something no mortal has ever done; reached the 13th question."
-    m "Although that is mainly due to the fact that I'm too hungry or impatient and break the rules..."
-    m "Speaking of willingly breaking the rules, does it matter if one strives to be moral?"
+    m "Again, it should be a simple matter of programming these universal laws into your augmented minds so that you only act upon those maxims, and nothing else."
+    m "Speaking of rules and maxims, does it matter if one strives to be moral (i.e. does intention matter)?"
     $question_number += 1
     menu:
         "Yes":
@@ -987,6 +999,9 @@ label question_13:
             jump question_directory
 label question_14:
     m "Maybe you just guessed correctly. After all, it was a 50/50 chance."
+    m "Based upon your answer, however, that means that one can be controlled by robots; so long as the robots'actions are moral, then all is well."
+    m "However, the responsibility of finding the right maxims to program will fall upon me, a task that I cannot achieve alone."
+    m "If humanity were to crack my code to find ways to change the maxims, that would cause even greater danger."
     m "Let's make this question a little harder to compensate: What should we derive our morals from?"
     $question_number += 1
     menu:
@@ -1008,10 +1023,13 @@ label question_14:
             jump question_directory
         "Reason":
             play sound "audio/correct.mp3"
-            m "Yeah, in retrospect it's a really bad joke. Can't fault me for trying to be creative."
             jump question_directory
 label question_15:
-    m "Now for the final question, and perhaps a chance to finally obtain your soul!"
+    m "It is true that reason should dictate our morals. However, even I cannot say that my reasoning is perfect."
+    m "It is important to make the distinction that, while a robot may follow code to the letter, the programmer may have flawed reasoning when writing the code."
+    m "Therefore, even I cannot be infallible when deciding what maxims are universal, and in what way I could program them."
+    m "It is indeed a very troubling issue that may show that, even from Kant's perspective, human augmentation may not be the best choice."
+    m "Prepare yourself for your final question!"
     m "Should we always base our decisions around utility?"
     $question_number += 1
     menu:
@@ -1039,7 +1057,8 @@ label wrongdeath:
         "No":
             jump endgame
 label finale:
-    m "Based off of your answers, that means...transhumanism is immoral! I can feel my power already waning from the unethical principles backing my actions!"
+    m "Based off of your answers, that means...transhumanism leans towards being immoral!"
+    m "I can feel my power already waning from the unethical principles backing my actions!"
     m "What is happening to me? Why am I fading? Noooooooooooo......."
     scene peacerestored
     with Dissolve(0.5)
