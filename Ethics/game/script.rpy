@@ -57,7 +57,7 @@ label russia:       # Russia -> Kant
     scene grass
     with dissolve
     N "You take a step back outside into the midafternoon sun, find a nice spot next to the school under the trees, and slowly fall into a light slumber"
-    
+
     play music "Audio/K_Dreamy.mp3" fadein 1.0 fadeout 1.0
     menu:
         N "As you drift off, you begin to dream about your favorite Russian cuisine..."
@@ -69,7 +69,7 @@ label russia:       # Russia -> Kant
             jump morozhenoe
         "Pirozhki":
             $ food = "Pirozhki"
-            jump pirozhki       
+            jump pirozhki
 
 label beef:
     scene beef
@@ -98,7 +98,7 @@ label wakeup:
     show kant
     with dissolve
     N "You sit up quickly in surprise. A short man stands before you with his hair curled on both sides looking like one of those old founding fathers you learned about in American history class"
-    
+
     menu:
         N "Flustered, you respond by saying..."
         "I..I'm sorry I was daydreaming about food because I was so hungry...":
@@ -121,41 +121,41 @@ label lazy:
     K "The busier we are, the more acutely we feel that we live, the more conscious we are of life."
     menu:
         "Wow.. that's very inspirational!":
-            jump invite 
+            jump invite
         "I guess so...":
             jump invite
 
 label invite:
-    
+
     menu:
         K "Yes. Anyways, will you attend my lecture today?"
         "Umm I don't even know who you are":
-            jump its_kant 
+            jump its_kant
         "Sure! What's your name again?":
             jump its_kant
 
 label its_kant:
-    
+
     menu:
         K "I am Immanuel Kant of course. Did you forget who your instructor is?"
         "OMG!! IMMANUEL KANT??":
-            jump confused 
+            jump confused
         "Just who I was looking for! I'm from the future.":
             jump future
 
 label confused:
     K "..."
-    
+
     menu:
         K "I am flattered by your excitement... It seems as if you are a new student here so I will kindly encourage you to come to my lecture."
         "LOL sounds good! I'm also from the future btw":
-            jump future 
+            jump future
         "Thanks for the advice! I'll see you at your lecture":
             jump to_lecture
 
 label future:
     K "Hmmm... The future you say? That must explain the strange garb that you don"
-    
+
     menu:
         K "How must I believe you? My reasoning leads me to not believe in such outlandish tales. Do my eyes and ears deceive me?"
         "Yeah... I'm from the future. I can't tell you much more":
@@ -219,17 +219,17 @@ label water:
     with dissolve
     hide kant
     N "After being woken up from your previous nap, you feel extremely sleepy and doze off during Kant's lecture, dreaming again about the delicious food"
-    
+
     scene classroom
     with dissolve
     stop music
     play sound "Audio/K_Bamboo.mp3"
     N "You are woken to the pain of a wooden stick slapped across your head"
-    
+
     show kant
     N "You look up to see Kant's short figure staring at you in the middle of an empty classroom"
     K "Hello time traverler?? Can you hear me?"
-    K "Why have you fallen asleep during my lecture?" 
+    K "Why have you fallen asleep during my lecture?"
 
     menu:
         K "Does this seem like a joke to you?"
@@ -263,7 +263,7 @@ label k_walk:
             jump k_reason
 
 label k_religion:
-    K "Religion is a place where many people draw their moral beliefs and foundations. However, there exist many religions throughout our known world" 
+    K "Religion is a place where many people draw their moral beliefs and foundations. However, there exist many religions throughout our known world"
     K "Christianity, Islam, Buddhism, are all religions that have significant followings. Who is to say that a Christian philosophy is greater than a Buddhist's"
     K "The nature of differing faiths and religions creates a divide in universal maxims and we will not always draw the same answer to moral questions by looking at our different faiths"
     if morals == "religion":
@@ -289,7 +289,7 @@ label trolley:
     K "You have the opportunity to stop the trolley killing these five innocent men by pushing me in the way of the trolley to stop it"
     K "In one situation, the five men end up dead and the other results in your friend dead, but the five men spared"
     play sound "Audio/K_Train.mp3"
-    
+
     menu:
         K "What should you choose?"
         "Duhh, I'd just push you in the way and save the five people. You're gonna die in 1804 anyways":
@@ -318,7 +318,7 @@ label save_kant:
 
 label k_bye_bye:
     K "You have acquired all the knowledge you need about my philosophy on reasoning and the categorical imperative despite sleeping through my lecture"
-    
+
     menu:
         K "Go along then back to where you came"
         "Sorry I need an artifact from you to bring back for the Philosopher's stone":
@@ -659,7 +659,9 @@ label liar_death:
         "No":
             jump endgame
 label rule_explanation:
-    m "I will ask you a series of questions. and you must respond. If you get more than three wrong, then, like a stereotypical monster, I will eat your soul."
+    m "As the harbringer of greatness, my goal is to augment humanity (transhumanism) so that it can achieve greater things."
+    m "However, I must need clarification on the ethical backing of my goal before I can proceed. As a reward, I shall grant you the philosopher's stone."
+    m "However, I am an impatient immortal. If you get more than three wrong, then, like a stereotypical monster, I will eat your soul."
     menu:
         "Are you kidding me?!?":
             m "No, unfortunately for you. Let us begin."
@@ -713,7 +715,7 @@ label question_directory:
         jump finale
 
 label question_1:
-    m "Hmm I see that you have talked with Aristotle. Let's see if your little brain has retained anything."
+    m "Hmm I see that you have talked with Aristotle. Let's see if my little advisor has anything to say."
     m "What is ethical virtue derived from?"
     $question_number += 1
     menu:
@@ -734,13 +736,14 @@ label question_1:
             m "Off to a good start...from your perspective."
             jump question_directory
 label question_2:
-    m "Doing well? Let's see if this question can jog your memory"
+    m "Hmm, if ethical virtue is derived from practical wisdom, then perhaps transhumanism could still be possible."
+    m "After all, if humans are augmented with technological devices, then perhaps they have enhanced abilities to derive this practical wisdom."
+    m "I still need more insight from, Aristotle, however."
     m "According the Aristotle's Athenian Guard Scenario, is every ethical action clear cut?"
     $question_number += 1
     menu:
         "No; often, there are grey areas.":
             play sound "audio/correct.mp3"
-            m "Correct. Although if I had my choice, I would kill the guard and the two children bwahaha."
             jump question_directory
         "Yes; everyone can make the right choice.":
             play sound "audio/oof.mp3"
@@ -752,7 +755,8 @@ label question_2:
             $num_wrong += 1
             jump question_directory
 label question_3:
-    m "I've been going too easy on you. Here's a little puzzler."
+    m "Indeed, there may be many grey areas, my little one. Perhaps these grey areas do cover transhumanism, which is why we must examine this issue closely."
+    m "It could be that transhumanism leans towards the dark rather than the light, which is why exploring this issue is important."
     m "Fill in the blank: It is the deliberative process of an _____, or the intention, that matters."
     $question_number += 1
     menu:
@@ -772,6 +776,9 @@ label question_3:
             $num_wrong += 1
             jump question_directory
 label question_4:
+    m "Indeed, the deliberative process that matters rather than the action, according to Aristotle."
+    m "My intention is to take humanity to the next level since I believe that it will benefit your race."
+    m "Therefore, since my intention is good, then that means filling your little brains with nanomachines is ethical!"
     m "Hmm how about this: out of the three emotions below, which is most oftentimes not virtuous?"
     $question_number += 1
     menu:
@@ -787,7 +794,9 @@ label question_4:
             $num_wrong += 1
             jump question_directory
 label question_5:
-    m "How about another fill in the blank?"
+    m "Indeed, giving your kind robotic enhancements also has the potential to eliminate and inadvertently shun emotions."
+    m "However, Aristotle says that we must not shun these emotions, for they are part of being human. This indeed puts a roadblock in my plan."
+    m "Piece back my memory, small one."
     m "Those that are overwhelmed by their urges become little more than _____."
     $question_number += 1
     menu:
@@ -807,6 +816,9 @@ label question_5:
             $num_wrong += 1
             jump question_directory
 label question_6:
+    m "Indeed; if the design for human augmentation goes as planned, then the damage to your minds remains in question."
+    m "It could cause uncontrollable emotions, which would dehumanize you, contrary to the original intentions of the augmentation."
+    m "Thus, the ethical risk from Aristotle's point of view may be too great to attempt human augmentation."
     m "Well it seems that you are well versed in Aristotle. I wonder how you fare with Confucius's school of teaching."
     m "True or False: You can only achieve Junzi if you are person born of high social status."
     $question_number += 1
@@ -819,7 +831,9 @@ label question_6:
             play sound "audio/correct.mp3"
             jump question_directory
 label question_7:
-    m "Hmm that was a simple enough question. Maybe you don't remember this though. Which one of these qualities is NOT part of Junzi?"
+    m "Indeed, anyone is able to achieve Junzi, no matter their status."
+    m "Therefore, elevating your species to a higher status may prove ineffective in achieving Junzi. Perhaps augmenting your kind is not such a great idea after all..."
+    m "Which one of these qualities is NOT part of Junzi?"
     $question_number += 1
     menu:
         "Humanness":
@@ -1010,7 +1024,7 @@ label wrongdeath:
         "No":
             jump endgame
 label finale:
-    m "What?!? You completed my riddles?!? Impossible!!! No one has ever done this before!"
+    m "Based off of your answers, that means...transhumanism is immoral! I can feel my power already waning from the unethical principles backing my actions!"
     m "What is happening to me? Why am I fading? Noooooooooooo......."
     scene peacerestored
     with Dissolve(0.5)
