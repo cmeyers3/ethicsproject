@@ -321,6 +321,21 @@ label k_bye_bye:
 
     menu:
         K "Go along then back to where you came"
+        "Actually can I ask you one more question?"
+            jump k_transhumanism
+        "One sec please"
+            jump k_transhumanism
+
+label k_transhumanism
+    M "So a question about the future. Let's say that somehow we can change who we are by enhancing our intellect or physical abilities through things we installed in our body or brain."
+    K "Well that seems rather odd to do but go on"
+    M "Is adding these things to your body ethical?"
+    K "Hmmm... well it seems like much good can be done with this futuristic technology you speak about so if the general consensus of society is to use these things to further the capacity of the human race, it would seem to be ethical by the standards of the categorical imperative."
+    K "However, there if there is a case of one using this thing selfishly to enhance his being to dominate or oppress others, this would not be ethical at all"
+    K "Hehe seee?? Once again, one can use the categorical imperative here to discern the correct decision here even in this supernatural futuristic scenario that is completely hypothetical right?"
+    
+    menu:
+        K "Alrighty now scurry along back home. You'll be late for dinner"
         "Sorry I need an artifact from you to bring back for the Philosopher's stone":
             jump k_artifact
         "Umm hello?? I can't leave empty handed. Artifact please":
