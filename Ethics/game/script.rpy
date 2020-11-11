@@ -1,4 +1,4 @@
-﻿### Building/Compiling Game ###
+### Building/Compiling Game ###
 # 1. Check Script using <Check Script (Lint)> in Renpy Launcher to check syntax
 # 2. Build using <Build Distributions> in Renpy launcher
 
@@ -33,11 +33,12 @@ label start:        # Start
     # After obtaining their approval, you receive a special item from each philosopher
     # that you must use to unlock the gate/door to the philosopher’s stone.
 
-    jump greece
+    jump intro
 
-label cave:         # Ancient Cave
+label intro:         # Ancient Cave
+    jump china
 label china:        # Ancient China -> Confucius
-label cave2:        # Return to Cave
+    jump russia
 label russia:       # Russia -> Kant
     scene white
     N "Flash!"
@@ -326,21 +327,20 @@ label k_bye_bye:
         "One sec please"
             jump k_transhumanism
 
-label k_transhumanism
+label k_transhumanism:
     M "So a question about the future. Let's say that somehow we can change who we are by enhancing our intellect or physical abilities through things we installed in our body or brain."
-    K "Well that seems rather odd to do but go on"
+    K "Well that seems rather odd to do, but go on"
     M "Is adding these things to your body ethical?"
     menu:
         K "Hmmm... well what do you think?
-        "Yeah it could be ethical. Creates better good for society"
+        "Yeah it could be ethical. Creates better good for society":
             jump k_transhumanism_answer
-        "Nope not ethical. We are giving up what it means to be human"
+        "Nope not ethical. We are giving up what it means to be human":
             jump k_transhumanism_answer
-        "Well it really depends on the intentions"
+        "Well it really depends on the intentions":
             jump k_transhumanism_answer
 
-label k_transhumanism_answer
-
+label k_transhumanism_answer:
     K "It seems like much good can be done with this futuristic technology you speak about so if the general consensus of society is to use these things to further the capacity of the human race, it would seem to be ethical by the standards of the categorical imperative."
     K "However, there if there is a case of one using this thing selfishly to enhance his being to dominate or oppress others, this would not be ethical at all"
     K "Hehe seee?? Once again, one can use the categorical imperative here to discern the correct decision here even in this supernatural futuristic scenario that is completely hypothetical right?"
@@ -374,12 +374,11 @@ label k_paper:
     N "You exhale in relief as you at least have an excerpt of Kant's most famous work"
     N "You begin to feel faint as your discourse with Kant has left you exhausted"
     N "The scene begins to fall away as you slowly drift into unconsciousness"
+    jump greece
 
-label cave3:        # Return to Cave
 label greece:       # Ancient Greece -> Aristotle
     scene white
-    N "Flash!"
-    N "Your ears ring and the piercing flash of white light leaves you disoriented…"
+    N "Your ears ring as again, a piercing flash of white light leaves you disoriented…"
 
     scene plaza
     play music "Audio/A_plaza_ambience.mp3" fadein 1.0 fadeout 1.0
@@ -594,6 +593,72 @@ label A_AfterLecture:
     scene hall
     show aristotle
     with dissolve
+    N "You have a question that has been bothering you since lecture ended, and approach Aristotle afterwards to ask it."
+    menu:
+        "How might you apply your theory of virtue ethics to technology?":
+            jump A_Technology
+
+label A_Technology:
+    A "Technology? Might you explain what that means?"
+    menu:
+        "It is like magic meant to improve our lives.":
+            jump A_Transhumanism
+        "It is like magic meant to gain power over our universe.":
+            jump A_Transhumanism
+
+label A_Transhumanism:
+    A "Ah, so we are jumping to imaginary scenarios now, are we?"
+    A "Though, having the power of something like your technology has been the topic of many a talk between Plato and I..."
+    A "I think that technology would be wonderful to have in our lives!"
+    A "For example, say that this technology grants us eternal life."
+    A "The prospect of death may motivate us to seek truth and rationale in our lives, however, as too much life might fill us with sloth."
+    A "In fact, some live their whole lives pursuing everything but virtue."
+    A "Eternal life granted by your technology would not change that."
+    A "Therefore, as long as we pursue further practical wisdom in our extended lives, we might become more virtuous than before."
+    
+    menu:
+        "What if this involved giving up your physical body?":
+            jump A_ByeBody
+        "But would that not mean your life is not your own anymore?":
+            jump A_NotLife
+
+label A_ByeBody:
+    A "Hmm..."
+    A "I am not sure I would miss this frail body of mine, if I am honest."
+    A "If technology could allow me to move as I did when I was young, or lift the heaviest of boulders with ease, of course I would do this."
+    A "Though, I believe that intention does matter in cases such as this."
+    A "Should you assist yourself with technology in such a manner, intention matters."
+    A "A king who merges with technology to prolong their tyrannical reign fails to pursue virtue in his action."
+    A "A philosopher who merges with technology to pursue greater wisdom and seek righteousness, however, may succeed in acquiring even greater virtue over their extended life."
+    A "Perhaps, if technology or magic is born from humanity's rationale, it is even more virtuous to derive happiness from something that is uniquely human."
+    jump A_NoSad
+
+label A_NotLife:
+    A "Ah, so this is the heart of your question. What is it to be human?"
+    A "If I desire to be one with technology, untethered to my physical form, is that virtuous?"
+    A "I would argue that it is just as virtuous as living with a physical form."
+    A "Perhaps, if technology or magic is born from humanity's rationale, it is even more virtuous to derive happiness from something that is uniquely human."
+    A "Though, I believe that intention does matter in cases such as this."
+    A "Should you assist yourself with technology in such a manner, intention matters."
+    A "A king who merges with technology to prolong their tyrannical reign fails to pursue virtue in his action."
+    A "A philosopher who merges with technology to pursue greater wisdom and seek righteousness, however, may succeed in acquiring even greater virtue over their extended life."
+    jump A_NoSad
+
+label A_NoSad:
+    menu:
+        "What if technology could end suffering for humanity?"
+        jump A_YesSad:
+
+label A_YesSad:
+    A "End suffering? That sounds a lot like death to me."
+    A "Should technology end suffering for humanity, our lives would either be akin to the lives of the gods themselves, or no life at all."
+    A "Even curiosity might be considered suffering, as we search for knowledge we do not yet know."
+    A "Despite its pains, suffering motivates us to pursue virtue. In a way, rational suffering makes us uniquely human, and also separates us from beasts."
+    A "I can understand if technology eases suffering. To a certain extent, suffering limits our capability of pursuing happiness."
+    A "However, a life devoid of suffering seems to have no room for virtue within it."
+    jump A_Done
+
+label A_Done:
     A "So, do you have a better understanding of my theory of virtue ethics now, after that lecture?"
 
     menu:
@@ -638,9 +703,8 @@ label A_Understand:
     scene white
     hide aristotle
     with dissolve
-    jump cave4
+    jump final_boss_beginning
 
-label cave4:        # Return to Cave
 label final_boss_beginning:   # Sphinx/Final Boss Thing
     $renpy.music.set_volume(0.3, delay=0, channel='music')
     scene corrupted_background
@@ -649,7 +713,7 @@ label final_boss_beginning:   # Sphinx/Final Boss Thing
 
     m "Who goes there?"
 
-    m "I am Cthulhu III. I guard the Philosopher' Stone, which can only be obtained by solving my riddles."
+    m "I am Cthulhu III. I guard the Philosopher's Stone, which can only be obtained by solving my riddles."
     m "Huh? You say that's ripped from Harry Potter? Well, it wasn't destroyed it was *ahem* given to me through some gratuitous plot holes."
     m "Anyway, no one may attempt to achieve this prize unless they have obtained The Scrolls of Nicomachean Ethics, The Analects, and Kant's Drafts."
     m "Do you have all three?"
@@ -669,7 +733,7 @@ label stuff_checker:
         (because I can't think of anything better to do with my time)."
         jump rule_explanation
     else:
-        m "Wretched human! Did you think you could decieve me? I will crush your mortal body and devour your soul!"
+        m "Wretched human! Did you think you could deceive me? I will crush your mortal body and devour your soul!"
         jump liar_death
 label liar_death:
     stop music fadeout 1.0
