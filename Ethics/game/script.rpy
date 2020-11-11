@@ -330,10 +330,21 @@ label k_transhumanism
     M "So a question about the future. Let's say that somehow we can change who we are by enhancing our intellect or physical abilities through things we installed in our body or brain."
     K "Well that seems rather odd to do but go on"
     M "Is adding these things to your body ethical?"
-    K "Hmmm... well it seems like much good can be done with this futuristic technology you speak about so if the general consensus of society is to use these things to further the capacity of the human race, it would seem to be ethical by the standards of the categorical imperative."
+    menu:
+        K "Hmmm... well what do you think?
+        "Yeah it could be ethical. Creates better good for society"
+            jump k_transhumanism_answer
+        "Nope not ethical. We are giving up what it means to be human"
+            jump k_transhumanism_answer
+        "Well it really depends on the intentions"
+            jump k_transhumanism_answer
+
+label k_transhumanism_answer
+
+    K "It seems like much good can be done with this futuristic technology you speak about so if the general consensus of society is to use these things to further the capacity of the human race, it would seem to be ethical by the standards of the categorical imperative."
     K "However, there if there is a case of one using this thing selfishly to enhance his being to dominate or oppress others, this would not be ethical at all"
     K "Hehe seee?? Once again, one can use the categorical imperative here to discern the correct decision here even in this supernatural futuristic scenario that is completely hypothetical right?"
-    
+    M "Yes thank you for your insight"
     menu:
         K "Alrighty now scurry along back home. You'll be late for dinner"
         "Sorry I need an artifact from you to bring back for the Philosopher's stone":
@@ -991,11 +1002,11 @@ label question_13:
     $question_number += 1
     menu:
         "Yes":
-            play sound "audio/oof.mp3"
-            $num_wrong += 1
+            play sound "audio/correct.mp3"
             jump question_directory
         "No":
-            play sound "audio/correct.mp3"
+            play sound "audio/oof.mp3"
+            $num_wrong += 1
             jump question_directory
 label question_14:
     m "Maybe you just guessed correctly. After all, it was a 50/50 chance."
