@@ -37,8 +37,167 @@ label start:        # Start
 
 label intro:         # Ancient Cave
     jump china
-label china:        # Ancient China -> Confucius
+
+
+label china:
+    scene white
+    N "Flash!"
+    N "Your ears ring and the piercing flash of white light leaves you disoriented…"
+
+    scene temple
+    play music "Audio/A_China.mp3" fadein 1.0 fadeout 1.0
+    with dissolve
+    N "After a while, you finally begin to see again, in what you assume to be Ancient China!"
+    show confucius
+    C "I have been anticipating your arrival. Come quickly, you are late. My lessons are starting soon."
+    N "You follow Confucius, glad that you don't have to explain your sudden presence."
+
+    scene courtyard
+    show confucius
+    with dissolve
+    N "You follow Confucius to a courtyard, eager to learn and take the next step to obtaining the philosopher's stone."
+    with dissolve
+    C "Are you ready to begin your lesson?"
+    menu:
+        "Don't you want to know why I am here?.":
+            jump DontCare
+        "I am ready to begin.":
+            jump ConfuciusIntro
+
+label DontCare:
+    C "I do not care of your past. I only care what you do with my teaaching from this point onwards."
+    jump ConfuciusIntro
+
+label ConfuciusIntro:
+    C "Welcome to 6th Century BC China. We are currently in the Zhou Dynasty. My name is Kong Qi, you may know me as Confucius."
+    C "Today I shall be teaching you my core tenets. Do with them what you wish, but it is my wish that you embrace the lifestyle of a junzi."
+    jump ConfuciusJunzi
+
+label ConfuciusJunzi: 
+    M "Junzi? What does that mean?"
+    C "I teach all my disciples about personal cultivation. In order to achieve this, they must embrace the lifestyle of a true junzi, also known as a \"gentleman\"." 
+    menu: 
+        "So how does one be a gentlman?"
+        "You must be born into a family of noble status":
+            jump junzi_answer
+        "You must dress and act like a person of high social status": 
+            jump junzi_answer
+        "You must display qualities that are both ethical and cultural": 
+            jump junzi_answer
+    
+label junzi_answer: 
+    C "A true gentlemen does not depend on what family they are born into or what social status they look like they are in."
+    C "Instead, a gentleman should be the ethical exemplar in society and show three main qualities."
+    C "Humaneness(ren), filial piety(xiao), and ritural decorum(li)."
+    C "Here, let me explain to you what all of these mean."
+    jump humaneness
+
+label humaneness: 
+    C "In Ren, one must always respect others and treat them well. Your interpersonal relationships is one of the core aspects of your life."
+    C "Therefore you must treat others in a way you would want to be treated yourself. Only the man of humanity can rightly love some people and rightly despise people."
+    C "Only a human person is able to determine how to ethically treat other people."
+    jump filialpiety
+    
+label filialpiety: 
+    C "In Xiao, we focus on your relationship with your parents. You have a duty to be loyal to your parents. This loyalty is one that can even overwhelm the law."
+    C "That is the level of devotion you should show to your family. And as a result, this should be the level of devotion and selflessness you should show to the people around you."
+    C "In fact, are you not all one big family in the end?"
+    jump ritualdecorum
+
+label ritualdecorum: 
+    C "Li, which means ritual decorum is the basis of good social order."
+    C "It is the lifestyle in which a proper junzi must lead. In this lifestyle we see actions centered around ren."
+    C "Li is the cultivation of the lifetstyle a junzi must lead, a life centered around humaneness and treating people properly with respect."
+    jump C_AfterLecture
+
+
+label C_AfterLecture:
+    hide confucius
+    with dissolve
+    N "Confucius carries on with his lecture, and afterwards, the students stream out into the hallway."
+    stop music fadeout 1.0
+    play music "Audio/A_China_2.mp3" fadein 1.0 fadeout 1.0
+    scene temple
+    show confucius
+    with dissolve
+    C "Do you now understand what Confucianism is about?"
+
+    menu:
+        "Not quite... could you elaborate on it a little?":
+            jump C_Misunderstand
+        "I think so!":
+            jump C_ExplainTranshumanism
+
+label C_Misunderstand:
+    C "I guess it is hard to learn about a lifestyle one must lead without having any experience in it before."
+
+    C "In summary, one must lead a life where one can be a junzi, a moral exemplar in society. A junzi's life centers around ren, humaneness."
+
+    C "A true Confucian junzi does not promote conformity, but rather harmony."
+
+    C "A ruler should not surround themselves with people who share similar viewpoints as them, but rather a diverse group of people who will complement and balance out each other by providing their own special input."
+
+    jump C_AskConfucious
+
+
+label C_AskConfucious:
+    N "It seems you have learned the way of Confucianism. It is time to apply this knowledge to help the future."
+    M "Thank you for your knowledge. Now, I need your help."
+
+    menu:
+        "What are your thoughts on transhumanism?":
+            jump C_ExplainTranshumanism
+        "Do you know what transhumanism is?":
+            jump C_ExplainTranshumanism
+
+label C_ExplainTranshumanism:
+    C " Transhumanism? What is that?"
+    M "Transhumanism is a movement that arises in the future. It's goal is to modify the human condition by using technology to enhance human intellect and philosophy."
+    C "Ah, I see. From what you've learned of my teachings, what do you think I would think of this transhumanism?"
+
+    menu:
+        "I think you would support transhumanism.":
+            jump C_Agree
+        "I think you would not support transhumanism.":
+            jump C_Disgaree
+
+label C_Agree:
+    C "You are wrong. "
+    jump C_ConfuciusView
+
+label C_Disgaree: 
+    C " You are correct. "
+    jump C_ConfuciusView
+
+label C_ConfuciusView:
+    C "I am a believer of humanism. The human being in itself has a lot of potential to do great things. Enhancement through technology is unnecessary."
+    C "This transhumanism of yours sounds like it is pursuing a sense of immortality for the body, however I believe in immortality of the spirit. The immortal spirit of our ancestors guides us through life."
+    jump C_Understand
+
+label C_Understand:
+    C "Well, I hope I could be of help to your plight in the future. As for a gift, if I must hand over something..."
+
+    pause(2.0)
+
+    C "I shall gift you with my Analects. They are my life teachings so I hope they help you with your journey."
+
+    hide confucius
+    with dissolve
+    N "Confucius retrieves some scrolls from his room, and hands them to you."
+    play sound "Audio/A_scroll_sound.mp3"
+    show confucius
+    with dissolve
+
+    C "Here you are."
+
+    N "As he says those words, you feel yourself fading out of consciousness."
+
+    C "Now, hurry along. You do not want to delay your journey any futher. You are already keeping your next teacher waiting."
+    scene white
+    hide confucius
+    with dissolve
     jump russia
+
 label russia:       # Russia -> Kant
     scene white
     N "Flash!"
