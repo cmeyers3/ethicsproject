@@ -37,7 +37,9 @@ label start:        # Start
     jump intro
 
 label intro:         # Ancient Cave
+    
     scene celebration
+    play music "Audio/happy.mp3" fadein 1.0 fadeout 1.0
     with dissolve
     N "The year is 2021 and the cure for COVID-19 is found. The Global Health Organization has found that implanting a small chip in everyone's brain will provide immunity to the coronavirus and every other infectious disease that exists."
     
@@ -53,6 +55,7 @@ label intro:         # Ancient Cave
     N "Unfortunately, as we all know, your hunches are always correct..."
     
     scene gate
+    play music "Audio/terminator.mp3" fadein 1.0 fadeout 1.0
     with dissolve
     N "A mysterious gate appears in the middle of South Bend, Indiana and the evil Cthulhu has somehow hijacked the brain implantations that everyone has been using"
     N "The Cthulhu has a plan to enhance the human race to its next level by turning human brains into computers"
@@ -66,6 +69,7 @@ label intro:         # Ancient Cave
     N "You must obtain their approval and receive a specital item from each philosopher that you must use to unlock the gate to the Philosopher's Stone"
     N "The first location is Ancient China"
     N "Time to go..."
+    stop music fadeout 1.0
     jump china
 
 
