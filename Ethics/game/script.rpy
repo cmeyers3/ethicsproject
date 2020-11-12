@@ -32,7 +32,35 @@ label start:        # Start
     # You time travel to each time period to train under each philosopher and learn their ethical framework.
     # After obtaining their approval, you receive a special item from each philosopher
     # that you must use to unlock the gate/door to the philosopher’s stone.
-
+    scene celebration
+    with dissolve
+    N "The year is 2021 and the cure for COVID-19 is found. The Global Health Organization has found that implanting a small chip in everyone's brain will provide immunity to the coronavirus and every other infectious disease that exists."
+    
+    scene brain
+    with dissolve
+    N "With this newfound technology and the world's desire to return to a normal life, all major countries and health organizations have approved this augmentation."
+    
+    scene before
+    with dissolve
+    N "Within the past several months, 95 percent of the world's population has adopted the the brain implant named S.U.S. which stands for Super Useful Stuff."
+    N "As a cautious and educated individual with a Bachelor's degree from the University of Notre Dame, you have held back on getting the brain implant with a hunch that something bad may happen."
+    N "The past few months have been a sort of utpoia with almost all of the world's illnesses and diseases eradicated. Patients have been cured of HIV/AIDS and global happiness has increased to all time highs."
+    N "Unfortunately, as we all know, your hunches are always correct..."
+    
+    scene gate
+    with dissolve
+    N "A mysterious gate appears in the middle of South Bend, Indiana and the evil Cthulhu has somehow hijacked the brain implantations that everyone has been using"
+    N "The Cthulhu has a plan to enhance the human race to its next level by turning human brains into computers"
+    
+    scene anonymous
+    with dissolve
+    N "You are sent an anonymous message on Facebook that warns you of the dangers of this tranhumanism the Cthulhu is trying to reach"
+    N "The message says you must embark on a journey to obtain the Philosopher's stone"
+    N "In order to do this you must learn three ethical frameworks and prove you are worthy of the stone"
+    N "You must time travel to each time period to train under each philosopher and learn their ethical framework"
+    N "You must obtain their approval and receive a specital item from each philosopher that you must use to unlock the gate to the Philosopher's Stone"
+    N "The first location is Ancient Greece"
+    N "Time to go..."
     jump greece
 
 label cave:         # Ancient Cave
