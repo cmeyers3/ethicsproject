@@ -1,53 +1,48 @@
-Tue Nov 10 18:02:35 2020
+Wed Nov 11 20:19:36 2020
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
 
-Bootstrap to the start of init.init took 0.06s
-Early init took 0.00s
-Loader init took 0.02s
-Loading error handling took 0.02s
-Loading script took 0.09s
-Loading save slot metadata. took 0.02s
+Bootstrap to the start of init.init took 0.14s
+Early init took 0.01s
+Loader init took 0.05s
+Loading error handling took 0.05s
+Loading script took 0.23s
+Loading save slot metadata. took 0.04s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.08s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
+Running init code took 0.21s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.01s
 Index archives took 0.00s
-Dump and make backups. took 0.14s
+Dump and make backups. took 0.15s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.02s
+Initial gc. took 0.03s
 DPI scale factor: 1.250000
-Creating interface object took 0.05s
+Creating interface object took 0.11s
 Cleaning stores took 0.00s
-Init translation took 0.02s
+Init translation took 0.04s
 Build styles took 0.01s
-Load screen analysis took 0.01s
+Load screen analysis took 0.04s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
-Prepare screens took 0.05s
+Prepare screens took 0.15s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.05s
+Save bytecode. took 0.00s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.02s
-Couldn't import angle renderer:
-Traceback (most recent call last):
-  File "C:\Users\Nathaniel Ho\Downloads\renpy-7.3.5-sdk\renpy\display\core.py", line 1939, in make_draw
-    __import__(mod)
-ImportError: DLL load failed: The specified module could not be found.
-Unknown renderer: angle
+Interface start took 0.04s
 
 primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(1600, 900) drawable=(1600, 900)
+Screen sizes: virtual=(1280, 720) physical=(1736, 976) drawable=(1736, 976)
 Vendor: 'Intel'
 Renderer: 'Intel(R) UHD Graphics 620'
 Version: '4.6.0 - Build 26.20.100.8142'
 Display Info: None
+Fixed-function is blacklisted.
 Extensions:
     GL_3DFX_texture_compression_FXT1
     GL_AMD_depth_clamp_separate
@@ -296,20 +291,24 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 1.15300011635s
+Total time until interface ready: 2.58000016212s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.017667 seconds.
-- Frame drawn at 0.033667 seconds.
-- Frame drawn at 0.049667 seconds.
-- Frame drawn at 0.124667 seconds.
-- 0.124667 seconds to render 5 frames.
-The window was minimized.
-The window was restored.
-
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(1600, 900) drawable=(1600, 900)
-Root FBO is: 0
-FBO Maximum Texture Size: 2048
+- Frame drawn at 0.020667 seconds.
+- Frame drawn at 0.073667 seconds.
+- Frame drawn at 0.345667 seconds.
+- Frame drawn at 0.356667 seconds.
+- 0.356667 seconds to render 5 frames.
+- Frame drawn at 0.571667 seconds.
+- 0.551000 seconds to render 5 frames.
+- Frame drawn at 0.591667 seconds.
+- 0.518000 seconds to render 5 frames.
+- Frame drawn at 0.605667 seconds.
+- 0.260000 seconds to render 5 frames.
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.02s
+Load screen analysis took 0.03s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s

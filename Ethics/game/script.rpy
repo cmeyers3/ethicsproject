@@ -322,9 +322,9 @@ label k_bye_bye:
 
     menu:
         K "Go along then back to where you came"
-        "Actually can I ask you one more question?"
+        "Actually can I ask you one more question?":
             jump k_transhumanism
-        "One sec please"
+        "One sec please":
             jump k_transhumanism
 
 label k_transhumanism:
@@ -332,7 +332,7 @@ label k_transhumanism:
     K "Well that seems rather odd to do, but go on"
     M "Is adding these things to your body ethical?"
     menu:
-        K "Hmmm... well what do you think?
+        K "Hmmm... well what do you think?"
         "Yeah it could be ethical. Creates better good for society":
             jump k_transhumanism_answer
         "Nope not ethical. We are giving up what it means to be human":
@@ -646,8 +646,8 @@ label A_NotLife:
 
 label A_NoSad:
     menu:
-        "What if technology could end suffering for humanity?"
-        jump A_YesSad:
+        "What if technology could end suffering for humanity?":
+            jump A_YesSad
 
 label A_YesSad:
     A "End suffering? That sounds a lot like death to me."
@@ -682,7 +682,6 @@ label A_Misunderstand:
 
 label A_Understand:
     A "Well, I hope I could be of help to your plight in the future. As for a relic, if I must hand over something..."
-
     pause(2.0)
 
     A "I know! I have a few rough drafts of my Nicomachean Ethics. They summarize my theory of virtue ethics fairly well. I do not think I will miss them."
@@ -729,8 +728,7 @@ label come_back:
     jump endgame
 label stuff_checker:
     if item_completion:
-        m "Hmm, looks like you are braver than I thought. I am bound by oath to challenge you with riddles.
-        (because I can't think of anything better to do with my time)."
+        m "Hmm, looks like you are braver than I thought. I am bound by oath to challenge you with riddles. (because I can't think of anything better to do with my time)."
         jump rule_explanation
     else:
         m "Wretched human! Did you think you could deceive me? I will crush your mortal body and devour your soul!"
