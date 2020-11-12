@@ -32,6 +32,11 @@ label start:        # Start
     # You time travel to each time period to train under each philosopher and learn their ethical framework.
     # After obtaining their approval, you receive a special item from each philosopher
     # that you must use to unlock the gate/door to the philosopher’s stone.
+    
+
+    jump intro
+
+label intro:         # Ancient Cave
     scene celebration
     with dissolve
     N "The year is 2021 and the cure for COVID-19 is found. The Global Health Organization has found that implanting a small chip in everyone's brain will provide immunity to the coronavirus and every other infectious disease that exists."
@@ -59,13 +64,170 @@ label start:        # Start
     N "In order to do this you must learn three ethical frameworks and prove you are worthy of the stone"
     N "You must time travel to each time period to train under each philosopher and learn their ethical framework"
     N "You must obtain their approval and receive a specital item from each philosopher that you must use to unlock the gate to the Philosopher's Stone"
-    N "The first location is Ancient Greece"
+    N "The first location is Ancient China"
     N "Time to go..."
-    jump greece
+    jump china
 
-label cave:         # Ancient Cave
-label china:        # Ancient China -> Confucius
-label cave2:        # Return to Cave
+
+label china:
+    scene white
+    N "Flash!"
+    N "Your ears ring and the piercing flash of white light leaves you disoriented…"
+
+    scene temple
+    play music "Audio/A_China.mp3" fadein 1.0 fadeout 1.0
+    with dissolve
+    N "After a while, you finally begin to see again, in what you assume to be Ancient China!"
+    show confucius
+    C "I have been anticipating your arrival. Come quickly, you are late. My lessons are starting soon."
+    N "You follow Confucius, glad that you don't have to explain your sudden presence."
+
+    scene courtyard
+    show confucius
+    with dissolve
+    N "You follow Confucius to a courtyard, eager to learn and take the next step to obtaining the philosopher's stone."
+    with dissolve
+    C "Are you ready to begin your lesson?"
+    menu:
+        "Don't you want to know why I am here?.":
+            jump DontCare
+        "I am ready to begin.":
+            jump ConfuciusIntro
+
+label DontCare:
+    C "I do not care of your past. I only care what you do with my teaaching from this point onwards."
+    jump ConfuciusIntro
+
+label ConfuciusIntro:
+    C "Welcome to 6th Century BC China. We are currently in the Zhou Dynasty. My name is Kong Qi, you may know me as Confucius."
+    C "Today I shall be teaching you my core tenets. Do with them what you wish, but it is my wish that you embrace the lifestyle of a junzi."
+    jump ConfuciusJunzi
+
+label ConfuciusJunzi: 
+    M "Junzi? What does that mean?"
+    C "I teach all my disciples about personal cultivation. In order to achieve this, they must embrace the lifestyle of a true junzi, also known as a \"gentleman\"." 
+    menu: 
+        "So how does one be a gentlman?"
+        "You must be born into a family of noble status":
+            jump junzi_answer
+        "You must dress and act like a person of high social status": 
+            jump junzi_answer
+        "You must display qualities that are both ethical and cultural": 
+            jump junzi_answer
+    
+label junzi_answer: 
+    C "A true gentlemen does not depend on what family they are born into or what social status they look like they are in."
+    C "Instead, a gentleman should be the ethical exemplar in society and show three main qualities."
+    C "Humaneness(ren), filial piety(xiao), and ritural decorum(li)."
+    C "Here, let me explain to you what all of these mean."
+    jump humaneness
+
+label humaneness: 
+    C "In Ren, one must always respect others and treat them well. Your interpersonal relationships is one of the core aspects of your life."
+    C "Therefore you must treat others in a way you would want to be treated yourself. Only the man of humanity can rightly love some people and rightly despise people."
+    C "Only a human person is able to determine how to ethically treat other people."
+    jump filialpiety
+    
+label filialpiety: 
+    C "In Xiao, we focus on your relationship with your parents. You have a duty to be loyal to your parents. This loyalty is one that can even overwhelm the law."
+    C "That is the level of devotion you should show to your family. And as a result, this should be the level of devotion and selflessness you should show to the people around you."
+    C "In fact, are you not all one big family in the end?"
+    jump ritualdecorum
+
+label ritualdecorum: 
+    C "Li, which means ritual decorum is the basis of good social order."
+    C "It is the lifestyle in which a proper junzi must lead. In this lifestyle we see actions centered around ren."
+    C "Li is the cultivation of the lifetstyle a junzi must lead, a life centered around humaneness and treating people properly with respect."
+    jump C_AfterLecture
+
+
+label C_AfterLecture:
+    hide confucius
+    with dissolve
+    N "Confucius carries on with his lecture, and afterwards, the students stream out into the hallway."
+    stop music fadeout 1.0
+    play music "Audio/A_China_2.mp3" fadein 1.0 fadeout 1.0
+    scene temple
+    show confucius
+    with dissolve
+    C "Do you now understand what Confucianism is about?"
+
+    menu:
+        "Not quite... could you elaborate on it a little?":
+            jump C_Misunderstand
+        "I think so!":
+            jump C_ExplainTranshumanism
+
+label C_Misunderstand:
+    C "I guess it is hard to learn about a lifestyle one must lead without having any experience in it before."
+
+    C "In summary, one must lead a life where one can be a junzi, a moral exemplar in society. A junzi's life centers around ren, humaneness."
+
+    C "A true Confucian junzi does not promote conformity, but rather harmony."
+
+    C "A ruler should not surround themselves with people who share similar viewpoints as them, but rather a diverse group of people who will complement and balance out each other by providing their own special input."
+
+    jump C_AskConfucious
+
+
+label C_AskConfucious:
+    N "It seems you have learned the way of Confucianism. It is time to apply this knowledge to help the future."
+    M "Thank you for your knowledge. Now, I need your help."
+
+    menu:
+        "What are your thoughts on transhumanism?":
+            jump C_ExplainTranshumanism
+        "Do you know what transhumanism is?":
+            jump C_ExplainTranshumanism
+
+label C_ExplainTranshumanism:
+    C " Transhumanism? What is that?"
+    M "Transhumanism is a movement that arises in the future. It's goal is to modify the human condition by using technology to enhance human intellect and philosophy."
+    C "Ah, I see. From what you've learned of my teachings, what do you think I would think of this transhumanism?"
+
+    menu:
+        "I think you would support transhumanism.":
+            jump C_Agree
+        "I think you would not support transhumanism.":
+            jump C_Disgaree
+
+label C_Agree:
+    C "You are wrong. "
+    jump C_ConfuciusView
+
+label C_Disgaree: 
+    C " You are correct. "
+    jump C_ConfuciusView
+
+label C_ConfuciusView:
+    C "I am a believer of humanism. The human being in itself has a lot of potential to do great things. Enhancement through technology is unnecessary."
+    C "This transhumanism of yours sounds like it is pursuing a sense of immortality for the body, however I believe in immortality of the spirit. The immortal spirit of our ancestors guides us through life."
+    jump C_Understand
+
+label C_Understand:
+    C "Well, I hope I could be of help to your plight in the future. As for a gift, if I must hand over something..."
+
+    pause(2.0)
+
+    C "I shall gift you with my Analects. They are my life teachings so I hope they help you with your journey."
+
+    hide confucius
+    with dissolve
+    N "Confucius retrieves some scrolls from his room, and hands them to you."
+    play sound "Audio/A_scroll_sound.mp3"
+    show confucius
+    with dissolve
+
+    C "Here you are."
+
+    N "As he says those words, you feel yourself fading out of consciousness."
+
+    C "Now, hurry along. You do not want to delay your journey any futher. You are already keeping your next teacher waiting."
+    scene white
+    hide confucius
+    with dissolve
+    jump russia
+
 label russia:       # Russia -> Kant
     scene white
     N "Flash!"
@@ -349,26 +511,25 @@ label k_bye_bye:
 
     menu:
         K "Go along then back to where you came"
-        "Actually can I ask you one more question?"
+        "Actually can I ask you one more question?":
             jump k_transhumanism
-        "One sec please"
+        "One sec please":
             jump k_transhumanism
 
-label k_transhumanism
+label k_transhumanism:
     M "So a question about the future. Let's say that somehow we can change who we are by enhancing our intellect or physical abilities through things we installed in our body or brain."
-    K "Well that seems rather odd to do but go on"
+    K "Well that seems rather odd to do, but go on"
     M "Is adding these things to your body ethical?"
     menu:
-        K "Hmmm... well what do you think?
-        "Yeah it could be ethical. Creates better good for society"
+        K "Hmmm... well what do you think?"
+        "Yeah it could be ethical. Creates better good for society":
             jump k_transhumanism_answer
-        "Nope not ethical. We are giving up what it means to be human"
+        "Nope not ethical. We are giving up what it means to be human":
             jump k_transhumanism_answer
-        "Well it really depends on the intentions"
+        "Well it really depends on the intentions":
             jump k_transhumanism_answer
 
-label k_transhumanism_answer
-
+label k_transhumanism_answer:
     K "It seems like much good can be done with this futuristic technology you speak about so if the general consensus of society is to use these things to further the capacity of the human race, it would seem to be ethical by the standards of the categorical imperative."
     K "However, there if there is a case of one using this thing selfishly to enhance his being to dominate or oppress others, this would not be ethical at all"
     K "Hehe seee?? Once again, one can use the categorical imperative here to discern the correct decision here even in this supernatural futuristic scenario that is completely hypothetical right?"
@@ -402,12 +563,11 @@ label k_paper:
     N "You exhale in relief as you at least have an excerpt of Kant's most famous work"
     N "You begin to feel faint as your discourse with Kant has left you exhausted"
     N "The scene begins to fall away as you slowly drift into unconsciousness"
+    jump greece
 
-label cave3:        # Return to Cave
 label greece:       # Ancient Greece -> Aristotle
     scene white
-    N "Flash!"
-    N "Your ears ring and the piercing flash of white light leaves you disoriented…"
+    N "Your ears ring as again, a piercing flash of white light leaves you disoriented…"
 
     scene plaza
     play music "Audio/A_plaza_ambience.mp3" fadein 1.0 fadeout 1.0
@@ -622,6 +782,72 @@ label A_AfterLecture:
     scene hall
     show aristotle
     with dissolve
+    N "You have a question that has been bothering you since lecture ended, and approach Aristotle afterwards to ask it."
+    menu:
+        "How might you apply your theory of virtue ethics to technology?":
+            jump A_Technology
+
+label A_Technology:
+    A "Technology? Might you explain what that means?"
+    menu:
+        "It is like magic meant to improve our lives.":
+            jump A_Transhumanism
+        "It is like magic meant to gain power over our universe.":
+            jump A_Transhumanism
+
+label A_Transhumanism:
+    A "Ah, so we are jumping to imaginary scenarios now, are we?"
+    A "Though, having the power of something like your technology has been the topic of many a talk between Plato and I..."
+    A "I think that technology would be wonderful to have in our lives!"
+    A "For example, say that this technology grants us eternal life."
+    A "The prospect of death may motivate us to seek truth and rationale in our lives, however, as too much life might fill us with sloth."
+    A "In fact, some live their whole lives pursuing everything but virtue."
+    A "Eternal life granted by your technology would not change that."
+    A "Therefore, as long as we pursue further practical wisdom in our extended lives, we might become more virtuous than before."
+    
+    menu:
+        "What if this involved giving up your physical body?":
+            jump A_ByeBody
+        "But would that not mean your life is not your own anymore?":
+            jump A_NotLife
+
+label A_ByeBody:
+    A "Hmm..."
+    A "I am not sure I would miss this frail body of mine, if I am honest."
+    A "If technology could allow me to move as I did when I was young, or lift the heaviest of boulders with ease, of course I would do this."
+    A "Though, I believe that intention does matter in cases such as this."
+    A "Should you assist yourself with technology in such a manner, intention matters."
+    A "A king who merges with technology to prolong their tyrannical reign fails to pursue virtue in his action."
+    A "A philosopher who merges with technology to pursue greater wisdom and seek righteousness, however, may succeed in acquiring even greater virtue over their extended life."
+    A "Perhaps, if technology or magic is born from humanity's rationale, it is even more virtuous to derive happiness from something that is uniquely human."
+    jump A_NoSad
+
+label A_NotLife:
+    A "Ah, so this is the heart of your question. What is it to be human?"
+    A "If I desire to be one with technology, untethered to my physical form, is that virtuous?"
+    A "I would argue that it is just as virtuous as living with a physical form."
+    A "Perhaps, if technology or magic is born from humanity's rationale, it is even more virtuous to derive happiness from something that is uniquely human."
+    A "Though, I believe that intention does matter in cases such as this."
+    A "Should you assist yourself with technology in such a manner, intention matters."
+    A "A king who merges with technology to prolong their tyrannical reign fails to pursue virtue in his action."
+    A "A philosopher who merges with technology to pursue greater wisdom and seek righteousness, however, may succeed in acquiring even greater virtue over their extended life."
+    jump A_NoSad
+
+label A_NoSad:
+    menu:
+        "What if technology could end suffering for humanity?":
+            jump A_YesSad
+
+label A_YesSad:
+    A "End suffering? That sounds a lot like death to me."
+    A "Should technology end suffering for humanity, our lives would either be akin to the lives of the gods themselves, or no life at all."
+    A "Even curiosity might be considered suffering, as we search for knowledge we do not yet know."
+    A "Despite its pains, suffering motivates us to pursue virtue. In a way, rational suffering makes us uniquely human, and also separates us from beasts."
+    A "I can understand if technology eases suffering. To a certain extent, suffering limits our capability of pursuing happiness."
+    A "However, a life devoid of suffering seems to have no room for virtue within it."
+    jump A_Done
+
+label A_Done:
     A "So, do you have a better understanding of my theory of virtue ethics now, after that lecture?"
 
     menu:
@@ -645,7 +871,6 @@ label A_Misunderstand:
 
 label A_Understand:
     A "Well, I hope I could be of help to your plight in the future. As for a relic, if I must hand over something..."
-
     pause(2.0)
 
     A "I know! I have a few rough drafts of my Nicomachean Ethics. They summarize my theory of virtue ethics fairly well. I do not think I will miss them."
@@ -666,9 +891,8 @@ label A_Understand:
     scene white
     hide aristotle
     with dissolve
-    jump cave4
+    jump final_boss_beginning
 
-label cave4:        # Return to Cave
 label final_boss_beginning:   # Sphinx/Final Boss Thing
     $renpy.music.set_volume(0.3, delay=0, channel='music')
     scene corrupted_background
@@ -677,7 +901,7 @@ label final_boss_beginning:   # Sphinx/Final Boss Thing
 
     m "Who goes there?"
 
-    m "I am Cthulhu III. I guard the Philosopher' Stone, which can only be obtained by solving my riddles."
+    m "I am Cthulhu III. I guard the Philosopher's Stone, which can only be obtained by solving my riddles."
     m "Huh? You say that's ripped from Harry Potter? Well, it wasn't destroyed it was *ahem* given to me through some gratuitous plot holes."
     m "Anyway, no one may attempt to achieve this prize unless they have obtained The Scrolls of Nicomachean Ethics, The Analects, and Kant's Drafts."
     m "Do you have all three?"
@@ -693,11 +917,10 @@ label come_back:
     jump endgame
 label stuff_checker:
     if item_completion:
-        m "Hmm, looks like you are braver than I thought. I am bound by oath to challenge you with riddles.
-        (because I can't think of anything better to do with my time)."
+        m "Hmm, looks like you are braver than I thought. I am bound by oath to challenge you with riddles. (because I can't think of anything better to do with my time)."
         jump rule_explanation
     else:
-        m "Wretched human! Did you think you could decieve me? I will crush your mortal body and devour your soul!"
+        m "Wretched human! Did you think you could deceive me? I will crush your mortal body and devour your soul!"
         jump liar_death
 label liar_death:
     stop music fadeout 1.0
